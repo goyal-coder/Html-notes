@@ -1,0 +1,528 @@
+While reading this you can use [freecodecamp.](https://www.youtube.com/watch?v=kUMe1FH4CHE&list=PLWKjhJtqVAbnSe1qUNMG7AbPmjIG54u88)
+
+# What is html?
+
+- HTML stands for Hyper Text Markup Language
+- HTML is the standard markup language for creating Web pages
+- HTML describes the structure of a Web page
+- HTML consists of a series of elements
+- HTML elements tell the browser how to display the content
+- HTML elements label pieces of content such as "this is a heading", "this is a paragraph", "this is a link", etc.
+
+## Must tags
+
+- The `<!DOCTYPE html>` declaration defines that this document is an HTML5 document
+- The `<html>` element is the root element of an HTML page
+- The `<head>` element contains meta information about the HTML page
+- The `<title>` element specifies a title for the HTML page (which is shown in the browser's title bar or in the page's tab)
+- The `<body>` element defines the document's body, and is a container for all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.
+
+# What are Elements?
+
+An HTML element is defined by a start tag, some content, and an end tag. Examples:
+
+```html
+<p>This is a paragraph</p>
+<h1>This is a heading</h1>
+<button>This is a button</button>
+
+```
+
+Some HTML elements have no content and are called empty elements. Empty elements do not have an end tag, such as `<br>` element (which indicates a line break).
+
+HTML elements can be nested (elements can contain elements). All HTML documents consist of nested HTML elements.
+
+```html
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>My First Heading</h1>
+    <p>My first paragraph.</p>
+  </body>
+</html>
+```
+
+# What are attributes?
+
+HTML attributes provide additional information about HTML elements. They are always specified in the start tag and usually come in name/value pairs like: name="value".
+
+## Common HTML Attributes
+
+- The `href` attribute specifies the URL of the page the link goes to
+- The `src` attribute specifies the path to the image to be displayed
+- The `style` attribute is used to specify the styling of an element, like color, font, size etc.
+- The `class` attribute specifies one or more classnames for an element
+- The `id` attribute specifies a unique id for an element
+
+```html
+&lt;a href="https://www.example.com"&gt;Visit Example.com&lt;/a&gt;
+&lt;img src="image.jpg" alt="Description"&gt;
+&lt;p style="color:red"&gt;This is a red paragraph.&lt;/p&gt;
+&lt;div class="myClass"&gt;A div with a class&lt;/div&gt;
+&lt;p id="myId"&gt;A paragraph with an ID&lt;/p&gt;
+```
+
+Note: All HTML elements can have attributes, and many attributes are common to all HTML elements. However, some attributes are specific to particular elements.
+
+# Comments
+
+HTML comments are used to add notes or explanations within your code that are not displayed on the webpage. They are useful for documenting the code or leaving reminders for yourself or others working on the code.
+
+### Syntax:
+
+```html
+
+<!-- This is a comment -->
+
+```
+
+### Key Points:
+
+- Comments are ignored by the browser and do not affect the webpage's appearance.
+- You can use comments to temporarily disable code or add descriptions for other developers or yourself.
+
+# Favicon
+
+A **favicon** (short for "favorites icon") is a small icon associated with a website, typically displayed in the browser tab, bookmarks, and history lists.
+
+### How to Add a Favicon in HTML:
+
+To add a favicon to your webpage, you can use the `<link>` tag in the `<head>` section of your HTML document.
+
+```html
+html
+CopyEdit
+<head>
+    <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
+</head>
+
+```
+
+### Key Points:
+
+- **File Format:** Common formats include `.ico`, `.png`, and `.jpg`.
+- **Size:** The recommended size for a favicon is 16x16 pixels, though modern browsers also support larger sizes (e.g., 32x32 or 48x48).
+- **Location:** You can place the favicon file in the root directory of your website or specify its path in the `href` attribute.
+
+That's all! It's a simple, quick way to make your website look more professional and recognizable.
+
+# Block and inline elements
+
+### Block Elements:
+
+- **Definition:** Block-level elements take up the full width available, stacking on top of each other, forming blocks.
+- **Example:** `<div>`, `<p>`, `<h1>`, `<section>`, `<article>`
+- **Behavior:**
+    - Start on a new line.
+    - Stretch out to fill the available width.
+    - Can contain other block or inline elements.
+
+### Inline Elements:
+
+- **Definition:** Inline elements only take up as much width as necessary and do not break the flow of the document.
+- **Example:** `<span>`, `<a>`, `<strong>`, `<em>`, `<img>`
+- **Behavior:**
+    - Do not start on a new line.
+    - Only occupy the space they need.
+    - Cannot contain block elements but can contain other inline elements.
+
+### Key Difference:
+
+- Block elements are used for larger structural elements, while inline elements are used for smaller, in-line pieces of content within block-level elements.
+
+# Class
+
+- **Definition:** The `class` attribute is used to assign one or more class names to an HTML element, which can be referenced by CSS and JavaScript.
+- **Purpose:**
+    - It allows you to apply styles to multiple elements at once.
+    - It enables you to group elements for specific styling or functionality.
+- **Syntax:**
+    
+    ```html
+    html
+    CopyEdit
+    <div class="container">Content here</div>
+    
+    ```
+    
+- **Usage:**
+    - In **CSS**, you can target elements with the same class name for styling:
+        
+        ```css
+        css
+        CopyEdit
+        .container {
+          background-color: lightblue;
+        }
+        
+        ```
+        
+    - In **JavaScript**, you can manipulate all elements with the class:
+        
+        ```jsx
+        javascript
+        CopyEdit
+        document.querySelectorAll('.container');
+        
+        ```
+        
+- **Multiple Classes:** An element can have multiple classes, separated by spaces:
+    
+    ```html
+    html
+    CopyEdit
+    <div class="box red">Content here</div>
+    
+    ```
+    
+- **Key Points:**
+    - Classes are **case-sensitive**.
+    - They help in styling or targeting multiple elements without repeating code.
+    
+    # Id
+    
+    - **Definition:** The `id` attribute uniquely identifies an element in an HTML document. Each `id` should be unique within a page.
+    - **Purpose:**
+        - It allows you to uniquely target a specific element for styling, scripting, or linking.
+        - The `id` is used when you need to select a single element on the page.
+    - **Syntax:**
+        
+        ```html
+        html
+        CopyEdit
+        <div id="main-content">Content here</div>
+        
+        ```
+        
+    - **Usage:**
+        - In **CSS**, you can target the element by its `id`:
+            
+            ```css
+            css
+            CopyEdit
+            #main-content {
+              color: blue;
+            }
+            
+            ```
+            
+        - In **JavaScript**, you can access an element using the `id`:
+            
+            ```jsx
+            javascript
+            CopyEdit
+            document.getElementById('main-content');
+            
+            ```
+            
+    - **Key Points:**
+        - **Uniqueness:** An `id` should only be used once on a page (no two elements should have the same `id`).
+        - **Case-sensitive:** `#main-content` and `#Main-Content` are considered different.
+        - IDs are faster to select in JavaScript compared to classes because they are unique.
+        
+        # Html layout might think that what
+        
+        ![a-1664529435501-2x.jpg](attachment:96c13d1c-93dc-418f-a547-f54eaff79397:a-1664529435501-2x.jpg)
+        
+
+Beginner might think that this is useless, but it isn’t. This is specially used to make Seo friendly websites.
+
+- `<header>` - Defines a header for a document or a section
+- `<nav>` - Defines a set of navigation links
+- `<section>` - Defines a section in a document
+- `<article>` - Defines independent, self-contained content
+- `<aside>` - Defines content aside from the content (like a sidebar)
+- `<footer>` - Defines a footer for a document or a section
+- `<details>` - Defines additional details that the user can open and close on demand
+- `<summary>` - Defines a heading for the `<details>` element
+
+# Semantic and non semantic elements
+
+### Semantic HTML:
+
+- **Definition:** Semantic HTML refers to the use of HTML elements that convey meaning about the content they enclose. These elements make the web page more readable and accessible for both humans and machines (such as search engines or screen readers).
+- **Examples of Semantic Elements:**
+    - `<header>`: Represents the header of a page or section.
+    - `<article>`: Defines a self-contained piece of content.
+    - `<section>`: Represents a section of content.
+    - `<footer>`: Represents the footer of a page or section.
+    - `<nav>`: Defines navigation links.
+    - `<aside>`: Represents content that is tangentially related to the content around it.
+- **Benefits:**
+    - Improves accessibility.
+    - Enhances SEO (search engine optimization).
+    - Makes code easier to understand and maintain.
+
+### Non-Semantic HTML:
+
+- **Definition:** Non-semantic HTML elements do not provide any specific meaning about the content they contain. These elements are used for styling or layout purposes without conveying any inherent meaning.
+- **Examples of Non-Semantic Elements:**
+    - `<div>`: A generic container for grouping content.
+    - `<span>`: A generic inline container for styling or grouping text.
+    - `<b>`: Bold text (doesn’t imply meaning beyond styling).
+    - `<i>`: Italic text (doesn’t imply meaning beyond styling).
+- **Drawbacks:**
+    - No meaningful information about the content.
+    - Less accessible for screen readers.
+    - Doesn't help with SEO as much as semantic tags.
+
+**Summary:**
+
+- **Semantic HTML** provides meaning (e.g., `<article>`, `<header>`), while **Non-Semantic HTML** is used for structure or styling without conveying any meaning (e.g., `<div>`, `<span>`). Using semantic tags is best for accessibility and SEO.
+
+# Html style guide
+
+A **HTML Style Guide** is a set of conventions or best practices to maintain consistent and clean HTML code. It helps developers write readable, maintainable, and accessible HTML. The key elements of an HTML style guide include:
+
+1. **Indentation:**
+    - Use consistent indentation, typically **2 or 4 spaces** per level, for better readability.
+    - Avoid using tabs or a mix of tabs and spaces.
+2. **Element Naming:**
+    - Use **lowercase** for HTML tags and attributes (e.g., `<a>`, `<img>`).
+    - Use **hyphenated names** for class and ID attributes (e.g., `class="main-container"`, `id="user-profile"`).
+3. **Closing Tags:**
+    - Always close your HTML tags. (e.g., `<div></div>`, `<p></p>`).
+    - For self-closing tags like `<img>`, use the correct syntax (`<img src="image.jpg" alt="description" />`).
+4. **Quotes Around Attributes:**
+    - Always enclose attribute values in **double quotes** (e.g., `<a href="https://example.com">`).
+5. **Avoid Inline Styles:**
+    - It is better to separate **CSS** from HTML by linking an external stylesheet instead of using inline styles (e.g., `<div style="color: red;">`).
+6. **Semantic Markup:**
+    - Prefer using **semantic elements** (e.g., `<header>`, `<article>`, `<section>`) over generic `<div>` and `<span>` elements for clarity and better SEO.
+7. **Whitespace and Line Breaks:**
+    - Use line breaks between major sections of your HTML code for better structure and readability.
+    - Avoid unnecessary extra spaces and blank lines.
+8. **Commenting:**
+    - Use **comments** (`<!-- comment -->`) to explain sections of code that might be complex or need clarification.
+
+**Example:**
+
+```html
+html
+CopyEdit
+<!-- Header section -->
+<header>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+```
+
+### Benefits:
+
+- **Consistency** in code structure.
+- Easier **collaboration** among multiple developers.
+- Improved **readability** and **maintainability** of HTML files.
+
+# Entities ,symbols and emojis
+
+1. **HTML Entities:**
+    - HTML entities are special characters or symbols that are represented using a code in HTML. They are used to display characters that have special meanings in HTML (like `<`, `>`, `&`, etc.).
+    - Entities start with `&` and end with `;`.
+    - **Common Entities:**
+        - `&lt;` for `<` (less than)
+        - `&gt;` for `>` (greater than)
+        - `&amp;` for `&` (ampersand)
+        - `&quot;` for `"` (double quote)
+        - `&apos;` for `'` (apostrophe)
+    
+    **Example:**
+    
+    ```html
+    html
+    CopyEdit
+    <p>&lt;div&gt;Hello World!&lt;/div&gt;</p>
+    
+    ```
+    
+    The above code will display: `<div>Hello World!</div>`
+    
+2. **HTML Symbols:**
+    - Symbols in HTML refer to special characters or signs used in text, such as mathematical symbols (e.g., `±`, `÷`), currency symbols (e.g., `€`, `₹`), or copyright symbols.
+    - These symbols can also be represented using HTML entities.
+    
+    **Common Symbols:**
+    
+    - `&copy;` → © (Copyright)
+    - `&reg;` → ® (Registered trademark)
+    - `&euro;` → € (Euro)
+    - `&pound;` → £ (Pound sterling)
+    - `&yen;` → ¥ (Yen)
+    
+    **Example:**
+    
+    ```html
+    html
+    CopyEdit
+    <p>&copy; 2025 Company Name</p>
+    
+    ```
+    
+3. **HTML Emojis:**
+    - Emojis are graphical representations of emotions, objects, or symbols and are typically inserted using Unicode characters.
+    - Emojis can be added directly by using their Unicode (e.g., `😊`, `🎉`) or by using HTML entities like `&#x1F60A;` for `😊`.
+    
+    **Example:**
+    
+    ```html
+    html
+    CopyEdit
+    <p>Let's celebrate! 🎉</p>
+    <p>Happy face: &#x1F60A;</p>
+    
+    ```
+    
+
+### Summary:
+
+- **HTML Entities** are used to represent special characters in HTML.
+- **Symbols** are special characters like currency signs, and they can be represented as entities.
+- **Emojis** can be used directly or via Unicode/HTML entities in the HTML text.
+
+**Tip:** Use entities to ensure special characters display correctly across all browsers and platforms!
+
+# Charset
+
+- **Charset (Character Encoding)** defines how characters are represented in a web page. It maps each character to a unique code, so browsers know how to display them properly.
+- The most commonly used character encoding is **UTF-8**. It supports a wide range of characters from different languages, symbols, and emojis.
+
+### Setting Charset in HTML:
+
+To ensure the browser reads your web page with the correct encoding, use the `<meta>` tag inside the `<head>` section.
+
+**Example:**
+
+```html
+html
+CopyEdit
+<head>
+    <meta charset="UTF-8">
+    <title>Charset Example</title>
+</head>
+
+```
+
+- `UTF-8` is the recommended and widely supported encoding because it can represent almost every character from every language.
+
+### Why is Charset Important?
+
+1. **Correct Display:** Ensures that all characters (including special characters, accented letters, emojis) display correctly.
+2. **Avoids Encoding Errors:** Prevents errors like weird symbols (`�`) appearing instead of proper text.
+
+### Common Charsets:
+
+- `UTF-8`: Most commonly used and supports almost all languages and characters.
+- `ISO-8859-1` (Latin-1): Older encoding for Western European languages.
+- `ASCII`: Basic encoding for English characters.
+
+### Example of Using Different Charsets:
+
+```html
+html
+CopyEdit
+<meta charset="UTF-8">
+
+```
+
+### Summary:
+
+- **Charset** defines the character encoding for your webpage.
+- **UTF-8** is the recommended charset for most cases as it supports multiple languages and characters.
+
+# Html vs XHTML
+
+- **HTML (HyperText Markup Language)**:
+    - The standard language for creating web pages.
+    - More flexible and lenient with syntax.
+    - Tags can be written without closing (e.g., `<li>` doesn’t need `</li>` if there’s no content).
+    - Attribute values can be written without quotes (e.g., `<input type=“text”>`).
+    - Tolerates errors such as missing end tags, lowercase tags, or improperly nested elements.
+- **XHTML (Extensible HyperText Markup Language)**:
+    - A stricter version of HTML based on XML (eXtensible Markup Language).
+    - Requires well-formed and valid syntax, meaning all tags must be properly closed and nested.
+    - Tags and attributes must be written in lowercase.
+    - All attribute values must be quoted (e.g., `<input type="text">`).
+    - Less forgiving of errors; even minor mistakes can break the page.
+    - Ensures compatibility with other XML-based languages.
+
+### Key Differences:
+
+1. **Syntax**:
+    - HTML is more flexible; XHTML is strict and must follow XML rules.
+2. **Tag Case**:
+    - HTML allows uppercase and lowercase tag names. XHTML requires lowercase.
+3. **Tag Closure**:
+    - HTML allows unclosed tags (e.g., `<li>`). XHTML requires all tags to be properly closed (e.g., `<li></li>`).
+4. **Error Handling**:
+    - HTML is more forgiving, whereas XHTML will not render if there are errors.
+5. **Document Type**:
+    - HTML uses `<!DOCTYPE html>`, while XHTML uses `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">`.
+
+### Conclusion:
+
+- **HTML** is easier to write and more forgiving, ideal for general use.
+- **XHTML** is stricter, often used for environments that need well-formed XML documents (though HTML5 has largely replaced XHTML for most purposes).
+
+# Element list
+
+For all elements visit [gfg](https://www.geeksforgeeks.org/html-tags-a-to-z-list/) and for videos visit [youtube.](https://www.youtube.com/playlist?list=PLw9zMOoodWb6KogQMHqAfXk_y0tgJSzI3)
+
+# Questions
+
+### **Theory Questions:**
+
+1. **What is HTML, and why is it important in web development?**
+2. **Explain the difference between HTML and XHTML.**
+3. **What is the purpose of the `<meta>` tag in HTML?**
+4. **What are semantic HTML elements? Can you provide examples?**
+5. **What is the difference between `<div>` and `<span>` tags?**
+6. **What are HTML attributes? Name a few commonly used attributes.**
+7. **What is the role of the `<head>` and `<body>` sections in an HTML document?**
+8. **What is the `<title>` tag used for, and where is it displayed?**
+9. **What is the difference between the `<ol>` and `<ul>` tags?**
+10. **Explain the role of the `alt` attribute in `<img>` tags.**
+11. **What is the use of the `<a>` tag, and how do you create a hyperlink with it?**
+12. **What is an iframe, and when would you use it?**
+13. **What is the purpose of the `charset` attribute in the `<meta>` tag?**
+14. **What is the difference between the block-level and inline-level elements in HTML?**
+15. **What are the advantages of using semantic tags over non-semantic tags in HTML?**
+16. **Explain the importance of accessibility in HTML.**
+17. **What does the `form` tag do in HTML, and what are its attributes?**
+18. **What are HTML5 features that make it different from previous HTML versions?**
+19. **Explain the purpose of the `action` and `method` attributes in the `<form>` tag.**
+20. **What is a favicon in HTML, and how can you add one to your website?**
+
+### **Practical Questions:**
+
+1. **Create a simple webpage that displays a heading and a paragraph of text.**
+2. **Write the HTML code to create a form with a text input field, radio buttons, and a submit button.**
+3. **Create a navigation bar using unordered lists (`<ul>`) and links (`<a>`).**
+4. **Write HTML code for embedding a video using the `<video>` tag.**
+5. **Create a table with three rows and four columns, with some sample data.**
+6. **Create an HTML page with an image and a caption below it.**
+7. **Write an HTML document with a link that opens in a new tab.**
+8. **Create an HTML page with a list of your favorite movies using an ordered list (`<ol>`).**
+9. **Write HTML code to create a dropdown menu using the `<select>` tag.**
+10. **Embed a Google Map on an HTML page using an `<iframe>`.**
+11. **Create an HTML form with a text input, password field, and a submit button.**
+12. **Create a webpage that uses a semantic structure (use tags like `<header>`, `<nav>`, `<section>`, `<footer>`).**
+13. **Write the HTML code to include an external CSS file and link to a JavaScript file.**
+14. **Write HTML code to create an image gallery with three images, using `<img>` tags.**
+15. **Create a webpage that displays a simple contact form with fields like name, email, and message.**
+16. **Write the HTML code to implement a favicon in a webpage.**
+17. **Write HTML code to create a block-level element inside an inline element, and explain the output.**
+18. **Create an HTML document that uses the `<blockquote>` tag to display a famous quote.**
+19. **Write HTML code for a form with a text area and a submit button, asking users to submit feedback.**
+20. **Create an HTML page that uses comments for code organization and explain their importance.**
+
+# Projects
+
+Use [website](https://devpractical.com/html-only-projects/) and upload these projects on github.
+
+# After this?
+
+Learn css but before that learn some advance topics like seo friendly websites and stuff.
